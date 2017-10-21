@@ -70,6 +70,12 @@ section h3.title {
 	text-align: center;
 }
 
+section h1.title {
+	color: white;
+	font-size: 4em;
+	text-align: center;
+}
+
 section p {
 	max-width: 775px;
 	line-height: 2;
@@ -78,31 +84,25 @@ section p {
 	text-align: center;
 }
 
+@media (max-width: 800px) {
+	section {
+		padding: 50px 20px;
+	}
+}
+
 /**
  * Header
  */
 
 header {
-	position: absolute;
+	position: fixed;
+	background-color: #3a0f6d;
 	width: 100%;
-	display: flex;
+	display: none;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px 50px 0;
-	animation: 1s fadein 0.5s forwards;
-	opacity: 0;
+	padding: 20px 50px 20px;
 }
-
-@keyframes fadein {
-	/*	opacity should be one when animation is finished*/
-	100% {
-		opacity: 1;
-	}
-}
-
-/*header h2 {
-	font-family: "Quicksand", sans-serif;
-}*/
 
 header nav {
 	display: flex;
@@ -111,6 +111,17 @@ header nav {
 
 header nav li {
 	margin: 0 15px;
+}
+
+@media (max-width: 800px) {
+	header {
+		padding: 20px 50px;
+		flex-direction: column;
+	}
+
+	header h2 {
+		margin-bottom: 15px;
+	}
 }
 
 /**
@@ -143,16 +154,38 @@ header nav li {
 	margin-bottom: 20px;
 }
 
+.hero .slogan {
+	margin: 0;
+	font-size: 0.9em;
+}
+
 .hero a.btn {
 	padding: 20px 46px;
 }
 
 .hero-content-area {
 	opacity: 0;
-	margin-top: 100px;
 	-webkit-animation: 1s slidefade 1s forwards;
 	-o-animation: 1s slidefade 1s forwards;
 	animation: 1s slidefade 1s forwards;
+}
+
+@media (max-width: 800px) {
+	.hero {
+		min-height: 600px;
+	}
+
+	.hero h1 {
+		font-size: 48px;
+	}
+
+	.hero h3 {
+		font-size: 24px;
+	}
+
+	.hero a.btn {
+		padding: 15px 40px;
+	}
 }
 
 @-webkit-keyframes slidefade {
@@ -196,6 +229,20 @@ header nav li {
 	flex-basis: 70%;
 }
 
+@media (max-width: 1100px) {
+	.potions .grid li.small,
+	.potions .grid li.large {
+		flex-basis: 50%;
+	}
+}
+
+@media (max-width: 800px) {
+	.potions .grid li.small,
+	.potions .grid li.large {
+		flex-basis: 100%;
+	}
+}
+
 /**
  * Packages
  */
@@ -213,6 +260,13 @@ header nav li {
 .packages .grid li h4 {
 	font-size: 30px;
 	margin: 25px 0;
+}
+
+@media (max-width: 800px) {
+	.packages .grid li {
+		flex-basis: 100%;
+		padding: 20px;
+	}
 }
 
 /**
@@ -233,6 +287,17 @@ header nav li {
 
 .testimonials hr {
 	background-color: white;
+}
+
+@media (max-width: 800px) {
+	.testimonnials .quota {
+		font-size: 18px;
+		margin: 15px;
+	}
+
+	.testimonials .author {
+		font-size: 14px;
+	}
 }
 
 /**
@@ -262,6 +327,13 @@ header nav li {
 	flex: 1;
 }
 
+@media (max-width: 1000px) {
+	.contact form input {
+		flex-basis: 100%;
+		margin: 0 0 20px 0;
+	}
+}
+
 /**
  * Footer
  */
@@ -289,4 +361,19 @@ footer p {
 	font-size: 14px;
 	opacity: 0.6;
 	align-self: center;
+}
+
+@media (max-width: 1100px) {
+	footer {
+		flex-direction: column;
+	}
+
+	footer p {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	footer ul li {
+		margin: 0 8px;
+	}
 }

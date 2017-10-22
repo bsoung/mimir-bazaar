@@ -1,26 +1,21 @@
 $(() => {
+	// $("header").hide();
 	$(window).scroll(function() {
 		// set distance user needs to scroll before we fadeIn navbar
 		if ($(this).scrollTop() > 300) {
-			$("header").css("display", "flex");
-			$("header").fadeIn("slow");
+			$("header").addClass("flex");
+			$("header").fadeIn("slow", function() {
+				// clearTimeout($.data(this, "scrollCheck"));
+				// $.data(
+				// 	this,
+				// 	"scrollCheck",
+				// 	setTimeout(function() {
+				// 		$("header").fadeOut("slow");
+				// 	}, 2000)
+				// );
+			});
 		} else {
-			$("header").fadeOut(1000);
-		}
-	});
-
-	$(window).scroll(function() {
-		if ($(this).scrollTop() > 301) {
-			$("header").fadeIn("slow");
-			clearTimeout($.data(this, "scrollCheck"));
-
-			$.data(
-				this,
-				"scrollCheck",
-				setTimeout(function() {
-					$("header").fadeOut(1000);
-				}, 1000)
-			);
+			$("header").fadeOut("slow");
 		}
 	});
 });

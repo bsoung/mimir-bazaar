@@ -18,4 +18,40 @@ $(() => {
 			$("header").fadeOut("slow");
 		}
 	});
+
+	$(".nav-contact-link").click(function() {
+		$("html,body").animate(
+			{
+				scrollTop: $(".contact").offset().top
+			},
+			"slow"
+		);
+	});
+
+	$(".nav-potions-link").click(function() {
+		$("html,body").animate(
+			{
+				scrollTop: $(".potions").offset().top
+			},
+			"slow"
+		);
+	});
+
+	$(".nav-packages-link").click(function() {
+		$("html,body").animate(
+			{
+				scrollTop: $(".packages").offset().top
+			},
+			"slow"
+		);
+	});
+
+	$(".nav-reviews-link").click(function() {
+		$("html,body").animate(
+			{
+				scrollTop: $(".testimonials").offset().top
+			},
+			"slow"
+		);
+	});
 });
